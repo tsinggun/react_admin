@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-console.log(process.env)
+// console.log(process.env)
 
 root.render(
+  <HashRouter>
     <App />
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

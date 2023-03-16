@@ -1,7 +1,12 @@
-import React from 'react'
+import React , { Fragment }from 'react'
+import { useRoutes } from 'react-router-dom'
+import routes from './router'
 
 export default function App() {
+  
   return (
-    <div>Appxxx</div>
+    <div>
+        {useRoutes(routes)}
+    </div>
   )
 }

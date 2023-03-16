@@ -12,14 +12,15 @@
     "@types/react-dom": "^18.0.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env REACT_APP_MODE=test craco start",
-    "start:gray": "cross-env REACT_APP_MODE=gray craco start",
+    "start": "cross-env REACT_APP_MODE=dev craco start",
     "start:dev": "cross-env REACT_APP_MODE=dev craco start",
+    "start:gray": "cross-env REACT_APP_MODE=gray craco start",
     "start:pre": "cross-env REACT_APP_MODE=pre craco start",
     "start:pro": "cross-env REACT_APP_MODE=pro craco start",
     "build": "craco build",
