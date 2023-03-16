@@ -17,7 +17,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "cross-env REACT_APP_MODE=test craco start",
+    "start:gray": "cross-env REACT_APP_MODE=gray craco start",
+    "start:dev": "cross-env REACT_APP_MODE=dev craco start",
+    "start:pre": "cross-env REACT_APP_MODE=pre craco start",
+    "start:pro": "cross-env REACT_APP_MODE=pro craco start",
     "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,6 +45,9 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.0.0-alpha.9"
+    "@craco/craco": "^7.0.0-alpha.9",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "webpack": "^5.76.2"
   }
 }
