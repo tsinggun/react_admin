@@ -2,6 +2,8 @@ const path = require('path')
 const dotenv = require('dotenv')
 const fs = require('fs');
 const resolve = (dir) => path.resolve(__dirname, dir)
+const CracoLessPlugin = require('craco-less')
+
 
 // 读取.env文件并将其添加到process.env中
 // dotenv.config()
@@ -16,5 +18,17 @@ module.exports = {
     alias: {
       '@': resolve('src')
     }
-  }
+  },
+  plugins: [
+    {
+      plugin: CracoLessPlugin,
+      options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            javascriptEnabled: true
+          }
+        }
+      }
+    }
+  ],
 }
