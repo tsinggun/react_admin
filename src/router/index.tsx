@@ -16,7 +16,7 @@ const routes: RouteObject [] = [
         element: <LayOut/>
     },
     {
-        path: 'login',
+        path: '/login',
         element: <Login/>
     }
 ]
