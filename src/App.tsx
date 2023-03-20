@@ -8,7 +8,7 @@ export default function App() {
 
 
   return (
-    <div>
+    <Fragment>
       {/* <span>1</span> */}
       {/* <Link to={'/home'}>home</Link> */}
       {/* <Link to={'/login'}>login</Link> */}
@@ -16,6 +16,6 @@ export default function App() {
       <Suspense>
         {useRoutes(routes)}
       </Suspense>
-    </div>
+    </Fragment>
   )
 }
