@@ -11,7 +11,6 @@ export default function RouterBeforeEach() {
             console.log(pathname);
             navigate('/login')
         }
-     
     }, [pathname])
     
 
