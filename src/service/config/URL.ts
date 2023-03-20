@@ -1,0 +1,5 @@
+export const api_1 = 'http://192.168.21.170:9200/uam'
+export const api_2 = 'http://192.168.21.170:9200/system'
+export const api_3 = 'http://192.168.21.170:9200/auth'
+export const api_4 = 'http://192.168.21.170:9200/detail'
+export const api_5 = 'http://192.168.21.170:9200/advertising'
