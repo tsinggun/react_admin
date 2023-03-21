@@ -1,10 +1,9 @@
 import React, { useState , useEffect} from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
-// import type { CheckboxOptionType } from 'antd'
-import {LoginWrapper} from './style'
+import { LoginWrapper } from './style'
 import * as Api from '@/service/login'
 import { useDebounceFn, useLocalStorageState } from 'ahooks';
-
+import { useNavigate } from "react-router-dom"
 
 
 const Login: React.FC = () => {
@@ -14,6 +13,7 @@ const Login: React.FC = () => {
   const [acountInfo, setAccountInfo] = useLocalStorageState<string | undefined>(
     'acountInfo',
   );
+  const navigate = useNavigate()
 
 
   /**
@@ -34,6 +34,7 @@ const Login: React.FC = () => {
         // console.log(res);
         if(checked){
           setAccountInfo(JSON.stringify(loginData))
+          navigate('/home')
         }else{
           setAccountInfo("")
         }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import RouterBeforeEach from '@/Components/RouterBeforeEach/RouterBeforeEach'
 
 
 export default function Layout() {
@@ -11,7 +11,7 @@ export default function Layout() {
         </h1>
 
         <div>
-            home
+            <RouterBeforeEach/>
         </div>
     </div>
   )
