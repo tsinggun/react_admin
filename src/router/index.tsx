@@ -25,6 +25,10 @@ const routes  = [
         element: <LayOut/>,
         children: [
             {
+                path:'/home',
+                element: <Navigate to={'/home/welcome'}/>,
+            },
+            {
                 auth: true,
                 path: '/home/welcome',
                 element: <DataBorad/>
