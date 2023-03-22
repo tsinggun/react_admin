@@ -4,9 +4,6 @@ import routes from './router'
 // import RouterBeforeEach from '@/Components/RouterBeforeEach/RouterBeforeEach'
 
 export default function App() {
-
-
-
   return (
     <Fragment>
       {/* <span>1</span> */}
