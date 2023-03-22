@@ -35,10 +35,8 @@ const Login: React.FC = () => {
   const onFinish = () => {
     form.validateFields().then(
       async loginData => {
-        const res = await  Api.userLogin(loginData).catch(err => console.log(err))
-        console.log(res.code);
-      },
-      err => console.log(err)
+        const res = await  Api.userLogin(loginData)
+      }
     )
   };
   const { run } = useDebounceFn(onFinish,  {wait: 200} )

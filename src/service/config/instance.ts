@@ -19,6 +19,10 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
     (config:AxiosResponse) => {
         return config.data
+    },
+    err => {
+        // console.log(err);
+        return err
     }
 )
 
