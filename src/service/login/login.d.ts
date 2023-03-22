@@ -3,6 +3,7 @@ export type loginData = {
     password: string
 }
 
-// export type loginRes = {
-
-// }
+export interface loginRes  {
+    code: number,
+    msg: string
+}

@@ -1,15 +1,12 @@
 import request from '../config/instance'
-import type {loginData} from './login'
+import {get, post} from '../config/instance'
+import type {loginData, loginRes} from './login'
 import { api_2, api_3 } from '../config/URL'
 
 // 登录
-export const userLogin = (data: loginData) => {
-    return request({
-        baseURL:api_3,
-        url:'/login',
-        method: 'post',
-        data
-    })   
+export const userLogin  = ( data: loginData ): Promise<loginRes>  => {
+
+    return post<loginRes>(`${api_3}/login`, {data})
 }
   
 //   // 获取用户的信息

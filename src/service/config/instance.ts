@@ -22,6 +22,14 @@ instance.interceptors.response.use(
     }
 )
 
+
+export function get<T> (url: string, config: any): Promise<T> {
+    return instance.get(url, config)
+}
+export function post<T>  (url: string, config: any): Promise<T> {
+    return instance.post(url, config)
+}
+
 /* 导出封装的请求方法 */
 export default instance
 

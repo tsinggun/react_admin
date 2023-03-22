@@ -4,6 +4,8 @@ import { LoginWrapper } from './style'
 import * as Api from '@/service/login'
 import { useDebounceFn, useLocalStorageState } from 'ahooks';
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from 'react-redux';
+import { saveToken } from '@/store/festures/userInfo';
 
 
 const Login: React.FC = () => {
@@ -14,6 +16,8 @@ const Login: React.FC = () => {
     'acountInfo',
   );
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
 
 
   /**
@@ -31,15 +35,8 @@ const Login: React.FC = () => {
   const onFinish = () => {
     form.validateFields().then(
       async loginData => {
-        // console.log(res);
-        if(checked){
-          setAccountInfo(JSON.stringify(loginData))
-          navigate('/home')
-        }else{
-          setAccountInfo("")
-        }
-        const res = await  Api.userLogin(loginData)
-        // console.log(res);
+        const res = await  Api.userLogin(loginData).catch(err => console.log(err))
+        console.log(res.code);
       },
       err => console.log(err)
     )
