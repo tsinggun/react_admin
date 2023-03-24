@@ -5,10 +5,14 @@ import {
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
+  SettingFilled
 } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
+import { Outlet } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
+
+
 
 const App: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -17,7 +21,7 @@ const App: React.FC = () => {
   } = theme.useToken();
 
   return (
-    <Layout className='full-height'>
+    <Layout className='h-full'>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo" >
           123
@@ -46,17 +50,22 @@ const App: React.FC = () => {
         />
       </Sider>
       <Layout className="site-layout">
+
         <Header style={{ padding: "0 24px", background: colorBgContainer }}>
-          <div>
+          <div className='flex-between w-full flex-align-center h-full'>
             {
               React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                 className: 'trigger',
                 onClick: () => setCollapsed(!collapsed),
               })
             }
+
+            <SettingFilled className='cursor-pointer'/>
+
           </div>
 
         </Header>
+
         <Content
           style={{
             margin: '24px 16px',
@@ -65,8 +74,9 @@ const App: React.FC = () => {
             background: colorBgContainer,
           }}
         >
-          Content
+            <Outlet/>
         </Content>
+
       </Layout>
     </Layout>
   );
