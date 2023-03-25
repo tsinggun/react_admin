@@ -16,10 +16,10 @@ interface TodoList {
 
 
 
-export default function TodoList() {
+export default function _TodoList() {
 
   const [todoList, setTodoList] = React.useState<TodoList[]>([]) // 任务列表
-  const [todo, setTodo] = React.useState<TodoList>() // 任务
+//   const [todo, setTodo] = React.useState<TodoList>() // 任务
   const inputRef = useRef<InputRef>(null)
 
   useEffect(
@@ -56,15 +56,15 @@ export default function TodoList() {
    * @param id 
    */
   const allowEdit = (alowEdited: boolean,id: any) => {
-    let value = ''
+    // let value = ''
     let list = [...todoList]
     list.forEach((item) => {
         if(item.id === id) {
-            setTodo(item)
+            // setTodo(item)
             item.alowEdit = !alowEdited
-            value = item.content
+            // value = item.content
         }
-    })
+    }) 
     setTodoList(list)
     queueMicrotask(
         () => {
