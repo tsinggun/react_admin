@@ -123,9 +123,9 @@ export default function _TodoList() {
 
   const deleteItem = (id: any) => {
     let list = [...todoList]
-    list.forEach((item) => {
+    list.forEach((item, index) => {
         if(item.id == id) {
-            list.splice(list.indexOf(item.id as any), 1)
+            list.splice(index, 1)
         }
     })
     setTodoList(list)
