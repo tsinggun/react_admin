@@ -11,7 +11,7 @@ export const TodoListContainer = styled.div`
     }
     .list-item:hover {
         .hand{
-            display: block;
+            display: inline-block;
         }
         background-color: lightblue;
     }

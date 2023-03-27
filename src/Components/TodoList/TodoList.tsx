@@ -1,7 +1,7 @@
 import React, { useEffect , useRef} from 'react'
 import { Card, Checkbox, Input, Space,Button } from 'antd';
 import type { InputRef } from 'antd';
-import {EditFilled} from '@ant-design/icons'
+import {EditFilled, DeleteFilled } from '@ant-design/icons'
 import { TodoListContainer } from './styled';
 
 // const list =
@@ -120,6 +120,17 @@ export default function _TodoList() {
     setTodoList(list)
   }
 
+
+  const deleteItem = (id: any) => {
+    let list = [...todoList]
+    list.forEach((item) => {
+        if(item.id == id) {
+            list.splice(list.indexOf(item.id as any), 1)
+        }
+    })
+    setTodoList(list)
+  }
+
   return (
     <TodoListContainer>
         <Card title="TodoList" style={{ width: 500}} bodyStyle={{padding:16}}>
@@ -144,7 +155,16 @@ export default function _TodoList() {
                                 </Checkbox>
 
                             </Space>
-                            { item.alowEdit && <EditFilled onClick={e=> {allowEdit(item.alowEdit, item.id)}} className='cursor-pointer hand'/> }
+
+                            <div>
+                                { 
+                                    item.alowEdit && 
+                                    <EditFilled onClick={e=> {allowEdit(item.alowEdit, item.id)}} className='cursor-pointer hand mr-2'/> 
+                                }
+                                <DeleteFilled onClick={e=> {deleteItem(item.id)}} className='cursor-pointer hand'/>
+
+                            </div>
+                            
                         </div>
                     )
                 })
